@@ -102,7 +102,7 @@ class _LoginPageCamState extends State<LoginPageCam> {
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "The field is empty";
-                            } else if (value.length < 10) {
+                            } else if (value.length < 8) {
                               return "The field is too short";
                             }
                             return null;

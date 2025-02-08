@@ -15,6 +15,8 @@ import 'package:carilly1/Pages/searchPage.dart';
 import 'package:carilly1/Pages/settings.dart';
 import 'package:carilly1/Pages/typeOfUser.dart';
 import 'package:carilly1/Pages/userFormRegistration.dart';
+import 'package:carilly1/Pages/support.dart';
+import 'package:carilly1/Pages/requestes_box.dart';
 import 'package:flutter/material.dart';
 
 import 'Pages/welcomePage.dart';
@@ -37,4 +39,7 @@ var routes=<String,WidgetBuilder>{
   '/SettingsPage':(context)=>SettingsPage(),
   '/LoginPageCam':(context)=>const LoginPageCam(),
   '/Editprofile':(context)=>EditProfileScreen(),
+  '/SupportPage':(context)=>SupportPage(),
+  '/Req_box':(context)=>RequestsScreen(),
+
 };
