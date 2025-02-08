@@ -4,12 +4,14 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class AddCarForm extends StatefulWidget {
+  const AddCarForm({super.key});
+
   @override
   _AddCarFormState createState() => _AddCarFormState();
 }
 
 class _AddCarFormState extends State<AddCarForm> {
-  List<File> _selectedImages = []; // A list to store multiple selected images.
+  final List<File> _selectedImages = []; // A list to store multiple selected images.
   final ImagePicker _picker = ImagePicker();
   final _formKey = GlobalKey<FormState>();
 
@@ -64,12 +66,12 @@ class _AddCarFormState extends State<AddCarForm> {
         }
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Car added successfully!')),
+          const SnackBar(content: Text('Car added successfully!')),
         );
         Navigator.pop(context); // Go back after saving
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Failed to add car.')),
+          const SnackBar(content: Text('Failed to add car.')),
         );
       }
     }
@@ -82,7 +84,7 @@ class _AddCarFormState extends State<AddCarForm> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Add a Car',
           style: TextStyle(
             color: Colors.black,
@@ -102,22 +104,22 @@ class _AddCarFormState extends State<AddCarForm> {
               children: [
                 // Upload Images Section
                 _buildImagePicker(screenHeight),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 // Add Car Information Section
                 _buildCarInfoForm(),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Center(
                   child: ElevatedButton(
                     onPressed: _saveCar,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF140C47),
+                      backgroundColor: const Color(0xFF140C47),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
                       padding: EdgeInsets.symmetric(
                           horizontal: screenWidth * 0.3, vertical: 15),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Add Car',
                       style: TextStyle(
                         color: Colors.white,
@@ -140,7 +142,7 @@ class _AddCarFormState extends State<AddCarForm> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Upload Images',
           style: TextStyle(
             color: Colors.black,
@@ -149,7 +151,7 @@ class _AddCarFormState extends State<AddCarForm> {
             fontWeight: FontWeight.w700,
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         _selectedImages.isNotEmpty
             ? SizedBox(
           height: screenHeight * 0.2,
@@ -176,7 +178,7 @@ class _AddCarFormState extends State<AddCarForm> {
                     right: 4,
                     child: GestureDetector(
                       onTap: () => _removeImage(index),
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                         radius: 12,
                         backgroundColor: Colors.red,
                         child: Icon(
@@ -195,34 +197,34 @@ class _AddCarFormState extends State<AddCarForm> {
             : Container(
           height: screenHeight * 0.2,
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xFF140C47)),
+            border: Border.all(color: const Color(0xFF140C47)),
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Center(
+          child: const Center(
             child: Text(
               'No Images Selected',
               style: TextStyle(color: Colors.grey),
             ),
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton.icon(
               onPressed: () => _pickImage(ImageSource.gallery),
-              icon: Icon(Icons.photo_library, color: Colors.white),
-              label: Text('Gallery', style: TextStyle(color: Colors.white)),
+              icon: const Icon(Icons.photo_library, color: Colors.white),
+              label: const Text('Gallery', style: TextStyle(color: Colors.white)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF140C47),
+                backgroundColor: const Color(0xFF140C47),
               ),
             ),
             ElevatedButton.icon(
               onPressed: () => _pickImage(ImageSource.camera),
-              icon: Icon(Icons.camera_alt, color: Colors.white),
-              label: Text('Camera', style: TextStyle(color: Colors.white)),
+              icon: const Icon(Icons.camera_alt, color: Colors.white),
+              label: const Text('Camera', style: TextStyle(color: Colors.white)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF140C47),
+                backgroundColor: const Color(0xFF140C47),
               ),
             ),
           ],
@@ -240,7 +242,7 @@ class _AddCarFormState extends State<AddCarForm> {
           icon: Icons.car_rental,
           onSaved: (value) => carName = value!,
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Row(
           children: [
             Expanded(
@@ -250,7 +252,7 @@ class _AddCarFormState extends State<AddCarForm> {
                 onSaved: (value) => brand = value!,
               ),
             ),
-            SizedBox(width: 15),
+            const SizedBox(width: 15),
             Expanded(
               child: CustomTextField(
                 label: 'Model',
@@ -260,13 +262,13 @@ class _AddCarFormState extends State<AddCarForm> {
             ),
           ],
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         CustomTextField(
           label: 'Price/Day',
           icon: Icons.attach_money_outlined,
           onSaved: (value) => pricePerDay = value!,
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Row(
           children: [
             Expanded(
@@ -276,7 +278,7 @@ class _AddCarFormState extends State<AddCarForm> {
                 onSaved: (value) => gas = value!,
               ),
             ),
-            SizedBox(width: 15),
+            const SizedBox(width: 15),
             Expanded(
               child: CustomTextField(
                 label: 'Year',
@@ -286,7 +288,7 @@ class _AddCarFormState extends State<AddCarForm> {
             ),
           ],
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Row(
           children: [
             Expanded(
@@ -296,7 +298,7 @@ class _AddCarFormState extends State<AddCarForm> {
                 onSaved: (value) => kilometers = value!,
               ),
             ),
-            SizedBox(width: 15),
+            const SizedBox(width: 15),
             Expanded(
               child: CustomTextField(
                 label: 'Seats',
@@ -317,11 +319,11 @@ class CustomTextField extends StatelessWidget {
   final FormFieldSetter<String>? onSaved;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.label,
     required this.icon,
     this.onSaved,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -334,7 +336,7 @@ class CustomTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50),
-          borderSide: BorderSide(color: Color(0xFF140C47)),
+          borderSide: const BorderSide(color: Color(0xFF140C47)),
         ),
       ),
       onSaved: onSaved,

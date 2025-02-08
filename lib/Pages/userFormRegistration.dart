@@ -1,7 +1,11 @@
 import 'package:carilly1/Databases/dbhelper.dart';
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:carilly1/Services/user_service.dart';
+import 'package:carilly1/models/user.dart';
 class UserFormRegistration extends StatefulWidget {
+  const UserFormRegistration({super.key});
+
   @override
   _UserFormRegistrationState createState() => _UserFormRegistrationState();
 }
@@ -9,12 +13,12 @@ class UserFormRegistration extends StatefulWidget {
 class _UserFormRegistrationState extends State<UserFormRegistration> {
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  TextEditingController _fullNameController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _confirmPasswordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  UserService userService = UserService();
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   RegExp nameRegex = RegExp(r'^[a-zA-Z]+(?: [A-Za-z]+)*$');
   RegExp phoneRegex = RegExp(r'^0[5-7]\d{8}$');
@@ -47,7 +51,7 @@ class _UserFormRegistrationState extends State<UserFormRegistration> {
                           border: Border.all(color: Colors.black, width: 2),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Icon(Icons.chevron_left),
+                        child: const Icon(Icons.chevron_left),
                       ),
                     ),
                     SizedBox(width: size.width * 0.04),
@@ -60,7 +64,7 @@ class _UserFormRegistrationState extends State<UserFormRegistration> {
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 CustomTextField(
                   label: 'Full Name',
                   icon: Icons.person_outline,
@@ -74,7 +78,7 @@ class _UserFormRegistrationState extends State<UserFormRegistration> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 CustomTextField(
                   label: 'Phone',
                   icon: Icons.phone_outlined,
@@ -88,7 +92,7 @@ class _UserFormRegistrationState extends State<UserFormRegistration> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 CustomTextField(
                   label: 'Password',
                   icon: Icons.lock,
@@ -108,7 +112,7 @@ class _UserFormRegistrationState extends State<UserFormRegistration> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 CustomTextField(
                   label: 'Confirm Password',
                   icon: Icons.lock,
@@ -128,43 +132,59 @@ class _UserFormRegistrationState extends State<UserFormRegistration> {
                     return null;
                   },
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 50),
-                    backgroundColor: Color(0xFF140C47),
+                    minimumSize: const Size(double.infinity, 50),
+                    backgroundColor: const Color(0xFF140C47),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(100),
-                      side: BorderSide(color: Colors.black),
+                      side: const BorderSide(color: Colors.black),
                     ),
                   ),
-                  onPressed: () async {
-                    if (_formKey.currentState!.validate()) {
-                      String fullName = _fullNameController.text;
-                      String phone = _phoneController.text;
-                      String password = _passwordController.text;
+                onPressed: () async {
+  if (_formKey.currentState!.validate()) {
+    try {
+      String fullName = _fullNameController.text;
+      String phone = _phoneController.text;
+      String password = _passwordController.text;
 
-                      print('Password: $password');
-                      print('Confirm Password: ${_confirmPasswordController.text}');
+      print('Password: $password');
+      print('Confirm Password: ${_confirmPasswordController.text}');
 
-                      String insertQuery = '''
-                        INSERT INTO User (name, password, phone_number)
-                        VALUES ('$fullName', '$password', '$phone');
-                      ''';
-                      int response = await dbHelper.Insert(insertQuery);
+      User newUser = User(
+        name: fullName,
+        phoneNumber: phone,
+        password: password, // Consider hashing before storing
+      );
 
-                      if (response > 0) {
-                        Navigator.pushNamed(context, '/homeUser', arguments: {
-                          'Name': fullName,
-                        });
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Failed to register user')),
-                        );
-                      }
-                    }
-                  },
-                  child: Text(
+      // Firestore insert
+      await userService.addUser(newUser);
+
+      // SQLite insert
+      String insertQuery = '''
+        INSERT INTO User (name, password, phone_number)
+        VALUES ('$fullName', '$password', '$phone');
+      ''';
+      int response = await dbHelper.Insert(insertQuery);
+
+      if (response > 0) {
+        Navigator.pushNamed(context, '/homeUser', arguments: {
+          'Name': fullName,
+        });
+      } else {
+        throw Exception('Failed to register user in SQLite');
+      }
+    } catch (e) {
+      print("❌ Error: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Registration failed: $e')),
+      );
+    }
+  }
+},
+
+                  child: const Text(
                     'Register',
                     style: TextStyle(
                       color: Colors.white,
@@ -191,14 +211,14 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.label,
     required this.icon,
     this.obscureText = false,
     this.toggleVisibility,
     this.validator,
     this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

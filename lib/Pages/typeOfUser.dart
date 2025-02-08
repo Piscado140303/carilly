@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TypeOfUser extends StatefulWidget {
+  const TypeOfUser({super.key});
+
   @override
   _TypeOfUserState createState() => _TypeOfUserState();
 }
@@ -31,22 +33,22 @@ class _TypeOfUserState extends State<TypeOfUser> {
                         style: TextStyle(
                           fontSize: screenWidth * 0.06,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF140C47),
+                          color: const Color(0xFF140C47),
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       _buildRoleButton("Agency"),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       _buildRoleButton("Normal User"),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          minimumSize: Size(double.infinity, 50),
+                          minimumSize: const Size(double.infinity, 50),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                           ),
-                          backgroundColor: Color(0xFF140C47),
+                          backgroundColor: const Color(0xFF140C47),
                           foregroundColor: Colors.white,
                         ),
                         onPressed: () {
@@ -84,9 +86,9 @@ class _TypeOfUserState extends State<TypeOfUser> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
@@ -108,10 +110,10 @@ class _TypeOfUserState extends State<TypeOfUser> {
       child: Container(
         width: double.infinity,
         height: 50,
-        margin: EdgeInsets.symmetric(horizontal: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
           gradient: selectedRole == role
-              ? LinearGradient(
+              ? const LinearGradient(
             colors: [Colors.blue, Colors.lightBlueAccent],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -127,7 +129,7 @@ class _TypeOfUserState extends State<TypeOfUser> {
             BoxShadow(
               color: Colors.blueAccent.withOpacity(0.5),
               blurRadius: 8,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ]
               : [],

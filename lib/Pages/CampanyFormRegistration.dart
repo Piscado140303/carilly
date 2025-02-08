@@ -79,7 +79,7 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           border: Border.all(color: Colors.black, width: 2),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Icon(Icons.chevron_left),
+                        child: const Icon(Icons.chevron_left),
                       ),
                     ),
                     SizedBox(width: size.width * 0.04),
@@ -103,16 +103,16 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           labelText: "Owner Full Name",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: const BorderSide(color: Colors.grey),
                           ),
-                          prefixIcon: Icon(Icons.person_outline),
+                          prefixIcon: const Icon(Icons.person_outline),
                           labelStyle: TextStyle(color: Colors.grey[500]),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black12),
+                            borderSide: const BorderSide(color: Colors.black12),
                             borderRadius: BorderRadius.circular(40),
                           ),
                         ),
@@ -130,16 +130,16 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           labelText: "Agency Name",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: const BorderSide(color: Colors.grey),
                           ),
-                          prefixIcon: Icon(Icons.business),
+                          prefixIcon: const Icon(Icons.business),
                           labelStyle: TextStyle(color: Colors.grey[500]),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black12),
+                            borderSide: const BorderSide(color: Colors.black12),
                             borderRadius: BorderRadius.circular(40),
                           ),
                         ),
@@ -157,16 +157,16 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           labelText: "Fix Phone",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: const BorderSide(color: Colors.grey),
                           ),
-                          prefixIcon: Icon(Icons.phone_outlined),
+                          prefixIcon: const Icon(Icons.phone_outlined),
                           labelStyle: TextStyle(color: Colors.grey[500]),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black12),
+                            borderSide: const BorderSide(color: Colors.black12),
                             borderRadius: BorderRadius.circular(40),
                           ),
                         ),
@@ -188,9 +188,9 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           labelText: "Password",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: const BorderSide(color: Colors.grey),
                           ),
-                          prefixIcon: Icon(Icons.lock_outline),
+                          prefixIcon: const Icon(Icons.lock_outline),
                           suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
@@ -198,16 +198,16 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                               });
                             },
                             icon: visibility_password
-                                ? Icon(Icons.visibility)
-                                : Icon(Icons.visibility_off),
+                                ? const Icon(Icons.visibility)
+                                : const Icon(Icons.visibility_off),
                           ),
                           labelStyle: TextStyle(color: Colors.grey[500]),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black12),
+                            borderSide: const BorderSide(color: Colors.black12),
                             borderRadius: BorderRadius.circular(40),
                           ),
                         ),
@@ -229,9 +229,9 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           labelText: "Confirm Password",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: const BorderSide(color: Colors.grey),
                           ),
-                          prefixIcon: Icon(Icons.lock_outline),
+                          prefixIcon: const Icon(Icons.lock_outline),
                           suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
@@ -240,16 +240,16 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                               });
                             },
                             icon: visibility_confirmation_password
-                                ? Icon(Icons.visibility)
-                                : Icon(Icons.visibility_off),
+                                ? const Icon(Icons.visibility)
+                                : const Icon(Icons.visibility_off),
                           ),
                           labelStyle: TextStyle(color: Colors.grey[500]),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black12),
+                            borderSide: const BorderSide(color: Colors.black12),
                             borderRadius: BorderRadius.circular(40),
                           ),
                         ),
@@ -270,20 +270,20 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           labelText: "Commerce Registration",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: const BorderSide(color: Colors.grey),
                           ),
-                          prefixIcon: Icon(Icons.person_outline),
+                          prefixIcon: const Icon(Icons.person_outline),
                           suffixIcon: IconButton(
                             onPressed: _selectCommerceImage,
-                            icon: Icon(Icons.drive_folder_upload),
+                            icon: const Icon(Icons.drive_folder_upload),
                           ),
                           labelStyle: TextStyle(color: Colors.grey[500]),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black12),
+                            borderSide: const BorderSide(color: Colors.black12),
                             borderRadius: BorderRadius.circular(40),
                           ),
                         ),
@@ -295,20 +295,20 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                           labelText: "ID Card",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: const BorderSide(color: Colors.grey),
                           ),
-                          prefixIcon: Icon(Icons.person_outline),
+                          prefixIcon: const Icon(Icons.person_outline),
                           suffixIcon: IconButton(
                             onPressed: _selectIdCardImage,
-                            icon: Icon(Icons.drive_folder_upload),
+                            icon: const Icon(Icons.drive_folder_upload),
                           ),
                           labelStyle: TextStyle(color: Colors.grey[500]),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black12),
+                            borderSide: const BorderSide(color: Colors.black12),
                             borderRadius: BorderRadius.circular(40),
                           ),
                         ),
@@ -337,16 +337,16 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                                 'AgencyName': agencyName,
                               });
                             } else {
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Registration failed')));
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Registration failed')));
                             }
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF192252),
+                          backgroundColor: const Color(0xFF192252),
                           shadowColor: Colors.white,
                           elevation: 0,
                           minimumSize: Size(size.width * 0.8, size.height * 0.061),
-                          side: BorderSide(color: Colors.black, width: 1.5),
+                          side: const BorderSide(color: Colors.black, width: 1.5),
                         ),
                         child: Text(
                           "Register",
@@ -365,12 +365,12 @@ class _CampanyformregistrationState extends State<Campanyformregistration> {
                         child:  Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Already have an account?"),
+                            const Text("Already have an account?"),
                             TextButton(
                               onPressed: () {
                                 Navigator.pushNamed(context, '/LoginPageCam');
                               },
-                              child: Text(
+                              child: const Text(
                                 "Login",
                                 style: TextStyle(fontWeight: FontWeight.w600),
                               ),

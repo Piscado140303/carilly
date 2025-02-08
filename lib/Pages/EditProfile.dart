@@ -3,6 +3,8 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class EditProfileScreen extends StatefulWidget {
+  const EditProfileScreen({super.key});
+
   @override
   _EditProfileScreenState createState() => _EditProfileScreenState();
 }
@@ -43,10 +45,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text("Edit Profile", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        title: const Text("Edit Profile", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
@@ -69,9 +71,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           radius: 50,
                           backgroundImage: _image != null
                               ? FileImage(_image!)
-                              : AssetImage("assets/default_profile.png") as ImageProvider,
+                              : const AssetImage("assets/default_profile.png") as ImageProvider,
                         ),
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundColor: Colors.white,
                           radius: 15,
                           child: Icon(Icons.camera_alt, size: 18, color: Colors.black),
@@ -80,8 +82,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
-                Text("Name", style: TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 30),
+                const Text("Name", style: TextStyle(fontWeight: FontWeight.bold)),
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Enter your name",
@@ -93,8 +95,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 15),
-                Text("Email", style: TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 15),
+                const Text("Email", style: TextStyle(fontWeight: FontWeight.bold)),
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Enter your email",
@@ -107,8 +109,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
-                SizedBox(height: 15),
-                Text("Date of Birth", style: TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 15),
+                const Text("Date of Birth", style: TextStyle(fontWeight: FontWeight.bold)),
                 TextField(
                   decoration: InputDecoration(
                     hintText: "DD/MM/YYYY",
@@ -121,8 +123,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ),
                   keyboardType: TextInputType.datetime,
                 ),
-                SizedBox(height: 15),
-                Text("Wilaya", style: TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 15),
+                const Text("Wilaya", style: TextStyle(fontWeight: FontWeight.bold)),
                 DropdownButtonFormField<String>(
                   decoration: InputDecoration(
                     filled: true,
@@ -138,8 +140,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   onChanged: (value) {},
                   isExpanded: true,
                 ),
-                SizedBox(height: 15),
-                Text("Password", style: TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 15),
+                const Text("Password", style: TextStyle(fontWeight: FontWeight.bold)),
                 TextFormField(
                   controller: _passwordController,
                   decoration: InputDecoration(
@@ -159,19 +161,19 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: _saveChanges,
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 15),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       backgroundColor: Colors.deepPurple,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: Text("Save changes", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                    child: const Text("Save changes", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
                   ),
                 ),
               ],

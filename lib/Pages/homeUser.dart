@@ -17,7 +17,7 @@ class _HomeUserState extends State<HomeUser> {
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    List<Widget> big_list = [FavaPage(), SuggestionsPage(), ProfilePage(userInfo: args)];
+    List<Widget> bigList = [const FavaPage(), const SuggestionsPage(), ProfilePage(userInfo: args)];
     final Size size = MediaQuery.of(context).size;
     final double screenWidth = size.width;
     final double screenHeight = size.height;
@@ -30,7 +30,7 @@ class _HomeUserState extends State<HomeUser> {
 
     return Stack(
       children: [
-        big_list[selected],
+        bigList[selected],
         Positioned(
           bottom: heightFactor(0.002),
           left: widthFactor(0.055),

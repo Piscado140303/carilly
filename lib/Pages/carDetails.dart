@@ -12,7 +12,7 @@ class CarDetails extends StatefulWidget {
 class _HomeState extends State<CarDetails> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
         body: Column(
           children: [
@@ -38,7 +38,7 @@ class _CarPictureState extends State<CarPicture> {
     'lib/images/sandero2.jpg',
     // Add more image paths here if needed
   ];
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentIndex = 0;
 
   @override
@@ -76,12 +76,12 @@ class _CarPictureState extends State<CarPicture> {
                     color: Colors.black.withOpacity(0.28),
                     spreadRadius: 1,
                     blurRadius: 8,
-                    offset: Offset(0, 0),
+                    offset: const Offset(0, 0),
                   ),
                 ],
               ),
               child: PageView.builder(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 controller: _pageController,
                 itemCount: _images.length,
                 itemBuilder: (context, index) {
@@ -103,12 +103,12 @@ class _CarPictureState extends State<CarPicture> {
               child: GestureDetector(
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.all(5.0),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(5.0),
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.favorite,
                     color: Colors.black,
                     size: 27,
@@ -122,12 +122,12 @@ class _CarPictureState extends State<CarPicture> {
               child: GestureDetector(
                 onTap: () {Navigator.pop(context);},
                 child: Container(
-                  padding: EdgeInsets.all(5.0),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(5.0),
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back,
                     color: Colors.black,
                     size: 27,
@@ -154,8 +154,8 @@ class CarMainInfos extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 15, 23, screenWidth * 0.05),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(5, 0, 5, 17),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(5, 0, 5, 17),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -222,7 +222,7 @@ class CarMainInfos extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(left: 14.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -254,12 +254,12 @@ class CarMainInfos extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           // Scrollable Car Info section
           Padding(
             padding: const EdgeInsets.fromLTRB(17, 7, 17, 17),
             child: Container(child: Column(
-              children: [Row(
+              children: [const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
@@ -277,7 +277,7 @@ class CarMainInfos extends StatelessWidget {
 
                   // Adjust this height as needed
                   child: SingleChildScrollView(
-                    child: Container(
+                    child: SizedBox(
                       width: double.infinity,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -302,13 +302,13 @@ class CarMainInfos extends StatelessWidget {
           ,ElevatedButton(
             onPressed: (){showRentalForm(context);},
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF140C47), // Background color
+              backgroundColor: const Color(0xFF140C47), // Background color
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
               padding: EdgeInsets.symmetric(horizontal: screenWidth*0.3, vertical: 15),
             ),
-            child: Text(
+            child: const Text(
               'Fill Form',
               style: TextStyle(
                 color: Colors.white,
@@ -331,7 +331,7 @@ class CarMainInfos extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 14,
               fontFamily: 'Urbanist',
@@ -341,7 +341,7 @@ class CarMainInfos extends StatelessWidget {
           ),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 14,
               fontFamily: 'Urbanist',

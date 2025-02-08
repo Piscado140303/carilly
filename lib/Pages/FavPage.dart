@@ -34,7 +34,7 @@ class _FavaPageState extends State<FavaPage> {
         ),
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
         centerTitle: true,
       ),

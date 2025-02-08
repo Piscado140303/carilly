@@ -44,14 +44,14 @@ class WelcomePage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           // Carilly Title
-          Positioned(
+          const Positioned(
             top: 100,
             left: 0,
             right: 0,
             child: Text(
               'CARilly',
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -59,12 +59,12 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           // Rental Cars Text
-          Positioned(
+          const Positioned(
             bottom: 150,
             left: 0,
             right: 0,
             child: Column(
-              children: const [
+              children: [
                 Text(
                   'Rental cars.',
                   textAlign: TextAlign.center,

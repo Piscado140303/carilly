@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ProfilePage extends StatefulWidget {
   final Map<String, dynamic>? userInfo;
 
-  const ProfilePage({Key? key, this.userInfo}) : super(key: key);
+  const ProfilePage({super.key, this.userInfo});
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -34,6 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
       print("No data found for user: $userName");
     }
   }
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(

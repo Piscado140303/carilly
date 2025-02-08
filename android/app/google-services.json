@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "888232380919",
+    "project_id": "carilly-977c4",
+    "storage_bucket": "carilly-977c4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888232380919:android:96a9cc2a88690ee6d806f2",
+        "android_client_info": {
+          "package_name": "com.example.carilly1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC88Yy39WsLPsN4t68ROPY7jt7NH8FjNEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

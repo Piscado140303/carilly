@@ -45,7 +45,7 @@ class _LoginPageCamState extends State<LoginPageCam> {
                           border: Border.all(color: Colors.black, width: 2),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Icon(Icons.chevron_left),
+                        child: const Icon(Icons.chevron_left),
                       ),
                     ),
                     SizedBox(width: size.width * 0.04),
@@ -80,16 +80,16 @@ class _LoginPageCamState extends State<LoginPageCam> {
                             labelText: "Full Name",
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(40),
-                              borderSide: BorderSide(color: Colors.grey),
+                              borderSide: const BorderSide(color: Colors.grey),
                             ),
-                            prefixIcon: Icon(Icons.person_outline),
+                            prefixIcon: const Icon(Icons.person_outline),
                             labelStyle: TextStyle(color: Colors.grey[500]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(40),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black12),
+                              borderSide: const BorderSide(color: Colors.black12),
                               borderRadius: BorderRadius.circular(40),
                             ),
                           ),
@@ -112,9 +112,9 @@ class _LoginPageCamState extends State<LoginPageCam> {
                             labelText: "Password",
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(40),
-                              borderSide: BorderSide(color: Colors.grey),
+                              borderSide: const BorderSide(color: Colors.grey),
                             ),
-                            prefixIcon: Icon(Icons.lock_outline),
+                            prefixIcon: const Icon(Icons.lock_outline),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
@@ -122,16 +122,16 @@ class _LoginPageCamState extends State<LoginPageCam> {
                                 });
                               },
                               icon: visibility_password
-                                  ? Icon(Icons.visibility)
-                                  : Icon(Icons.visibility_off),
+                                  ? const Icon(Icons.visibility)
+                                  : const Icon(Icons.visibility_off),
                             ),
                             labelStyle: TextStyle(color: Colors.grey[500]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(40),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black12),
+                              borderSide: const BorderSide(color: Colors.black12),
                               borderRadius: BorderRadius.circular(40),
                             ),
                           ),
@@ -157,18 +157,18 @@ class _LoginPageCamState extends State<LoginPageCam> {
                               } else {
                                 // Show error message
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text('Invalid credentials')),
+                                  const SnackBar(content: Text('Invalid credentials')),
                                 );
                               }
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF140C47),
+                            backgroundColor: const Color(0xFF140C47),
                             shadowColor: Colors.white,
                             elevation: 0,
                             minimumSize: Size(size.width * 0.87, size.height * 0.07),
                             maximumSize: Size(size.width * 0.87, size.height * 0.07),
-                            side: BorderSide(color: Colors.black, width: 1.5),
+                            side: const BorderSide(color: Colors.black, width: 1.5),
                           ),
                           child: Text(
                             "Login",
@@ -179,7 +179,7 @@ class _LoginPageCamState extends State<LoginPageCam> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Divider(
                           thickness: 1.5,
                           indent: size.width * 0.08,
@@ -196,7 +196,7 @@ class _LoginPageCamState extends State<LoginPageCam> {
                               onPressed: () {
                                 Navigator.pushNamed(context, '/typeOfUser');
                               },
-                              child: Text(
+                              child: const Text(
                                 "Register",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,

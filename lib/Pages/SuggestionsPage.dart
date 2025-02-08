@@ -34,7 +34,7 @@ class _SuggestionsPageState extends State<SuggestionsPage> {
         ),
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
         centerTitle: true,
       ),
@@ -65,7 +65,7 @@ class _SuggestionsPageState extends State<SuggestionsPage> {
                       Expanded(
                         child: Container(
                           color: Colors.transparent,
-                          child: Text(
+                          child: const Text(
                             'Explore...',
                             style: TextStyle(color: Colors.grey),
                           ),

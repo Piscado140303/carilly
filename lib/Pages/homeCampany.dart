@@ -21,7 +21,7 @@ class _HomeCampanyState extends State<HomeCampany> {
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    List<Widget> big_list = [RequestPage(), MyCars(), ProfilePageC(userInfo: args)];
+    List<Widget> bigList = [const RequestPage(), const MyCars(), ProfilePageC(userInfo: args)];
     final Size size = MediaQuery.of(context).size;
     final double screenWidth = size.width; // 360
     final double screenHeight = size.height; // 616
@@ -37,7 +37,7 @@ class _HomeCampanyState extends State<HomeCampany> {
     return Stack(
       children: [
         // Main Content
-        big_list[selected],
+        bigList[selected],
 
         // Bottom Navigation Container
         Positioned(

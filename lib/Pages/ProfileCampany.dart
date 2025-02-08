@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ProfilePageC extends StatefulWidget {
   final Map<String, dynamic>? userInfo;
 
-  const ProfilePageC({Key? key, this.userInfo}) : super(key: key);
+  const ProfilePageC({super.key, this.userInfo});
 
   @override
   State<ProfilePageC> createState() => _ProfilePageCState();
@@ -143,8 +143,8 @@ class _ProfilePageCState extends State<ProfilePageC> {
               onPressed: () {
                 Navigator.pushNamed(context, '/addCarForm');
               },
+              backgroundColor: const Color(0xFF192252),
               child: Icon(Icons.add, color: Colors.white),
-              backgroundColor: Color(0xFF192252),
             ),
           ),
         ],

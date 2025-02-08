@@ -6,7 +6,7 @@ void showRentalForm(BuildContext context) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    shape: RoundedRectangleBorder(
+    shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
     backgroundColor: Colors.white,
@@ -20,6 +20,8 @@ void showRentalForm(BuildContext context) {
 }
 
 class RentalFormContent extends StatefulWidget {
+  const RentalFormContent({super.key});
+
   @override
   _RentalFormContentState createState() => _RentalFormContentState();
 }
@@ -39,17 +41,17 @@ class _RentalFormContentState extends State<RentalFormContent> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: const Icon(Icons.arrow_back),
                     onPressed: () {
                       Navigator.pop(context);
                     },
                   ),
-                  Text(
+                  const Text(
                     "Fill Form",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   IconButton(
-                    icon: Icon(Icons.favorite_border),
+                    icon: const Icon(Icons.favorite_border),
                     onPressed: () {
                       // Favorite action
                     },
@@ -77,8 +79,8 @@ class _RentalFormContentState extends State<RentalFormContent> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -106,11 +108,11 @@ class _RentalFormContentState extends State<RentalFormContent> {
               ),
             ),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // Form Section
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -145,13 +147,13 @@ class _RentalFormContentState extends State<RentalFormContent> {
             ),
 
             // Submit Button
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
-                  backgroundColor: Color(0xFF140C47),
+                  minimumSize: const Size(double.infinity, 50),
+                  backgroundColor: const Color(0xFF140C47),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -159,7 +161,7 @@ class _RentalFormContentState extends State<RentalFormContent> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text(
+                child: const Text(
                   "Request Rental",
                   style: TextStyle(
                       color: Colors.white, fontSize: 18),
@@ -167,7 +169,7 @@ class _RentalFormContentState extends State<RentalFormContent> {
               ),
             ),
 
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
           ],
         ),
       ),
@@ -182,12 +184,12 @@ class CustomTextField extends StatelessWidget {
   final VoidCallback? toggleVisibility;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.label,
     required this.icon,
     this.obscureText = false,
     this.toggleVisibility,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -210,7 +212,7 @@ class CustomTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
       ),
     );

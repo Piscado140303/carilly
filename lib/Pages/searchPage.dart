@@ -85,15 +85,15 @@ class _SearchPageState extends State<SearchPage> {
                 suffixIcon: Icon(Icons.search, size: widthFactor(0.083)), // ~30px
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(40),
-                  borderSide: BorderSide(color: Colors.grey),
+                  borderSide: const BorderSide(color: Colors.grey),
                 ),
                 labelStyle: TextStyle(color: Colors.grey[500]),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
+                  borderSide: const BorderSide(color: Colors.black),
                   borderRadius: BorderRadius.circular(40),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black12),
+                  borderSide: const BorderSide(color: Colors.black12),
                   borderRadius: BorderRadius.circular(40),
                 ),
               ),
@@ -151,7 +151,7 @@ class _SearchPageState extends State<SearchPage> {
               child: Text(item),
             );
           }).toList(),
-          icon: Icon(Icons.arrow_drop_down, color: Colors.black),
+          icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
           alignment: Alignment.centerLeft, // Align the text to the left
         ),
       ),
